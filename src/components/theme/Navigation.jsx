@@ -5,12 +5,7 @@ import { connect } from 'react-redux';
 /* SEMANTIC UI */
 import { Menu } from 'semantic-ui-react';
 /* HELPERS */
-import {
-  isActive,
-  getNavigation,
-  removeValue,
-  getBasePath,
-} from '../../helpers';
+import { isActive, getNavigation, getBasePath } from '../../helpers';
 
 const Navigation = ({ content, ...props }) => {
   const [state, setState] = useState({
@@ -22,8 +17,7 @@ const Navigation = ({ content, ...props }) => {
       <Menu fluid widths={props.navigation.items.length}>
         {props.navigation.items.map((item, index) => {
           const url = getBasePath(item.url);
-          const urlArray = removeValue(url.split('/'), '');
-          const name = urlArray[urlArray.length - 1];
+          const name = item.title;
           if (isActive(url, props.pathname) && url !== state.activeItem) {
             setState({
               ...state,
