@@ -5,7 +5,12 @@ import { connect } from 'react-redux';
 /* SEMANTIC UI */
 import { Menu } from 'semantic-ui-react';
 /* HELPERS */
-import { isActive, getNavigation, removeValue, getBasePath } from '../../helpers';
+import {
+  isActive,
+  getNavigation,
+  removeValue,
+  getBasePath,
+} from '../../helpers';
 
 const Navigation = ({ content, ...props }) => {
   const [state, setState] = useState({
