@@ -1,0 +1,41 @@
+{
+    "name": "volto-tabsview",
+    "version": "0.0.10",
+    "description": "Add nav tabs in view for volto",
+    "main": "dist/index.js",
+    "scripts": {
+      "prepublishOnly": "babel ./src --out-dir ./dist -s inline"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/eaudeweb/volto-mosaic.git"
+    },
+    "files": [
+      "dist/*"
+    ],
+    "keywords": [
+      "volto",
+      "mosaic",
+      "Plone"
+    ],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/eea/volto-tabsview/issues"
+    },
+    "homepage": "https://github.com/eea/volto-tabsview#readme",
+    "devDependencies": {
+      "@babel/cli": "^7.6.0",
+      "@babel/core": "^7.6.0",
+      "@babel/plugin-proposal-class-properties": "^7.5.5",
+      "@babel/preset-env": "^7.6.0",
+      "@babel/preset-react": "^7.0.0"
+    },
+    "dependencies": {
+    },
+    "peerDependencies": {
+      "@plone/volto": "^4.0.0.alpha-17"
+    },
+    "voltoCustomizationPath": "src/customizations"
+  }
+  
