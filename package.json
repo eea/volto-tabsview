@@ -31,7 +31,9 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-indiana-drag-scroll": "^1.6.1"
+  },
   "peerDependencies": {
     "@plone/volto": "^4.0.0.alpha-17"
   },

@@ -30,6 +30,20 @@ export const getNavigation = (items, pathname, content) => {
   return {};
 };
 
+export const getNavigationByParent = (items, parent) => {
+  if (items && parent !== undefined) {
+    const pathnameArray = removeValue(parent.split('/'), '');
+    const location = pathnameArray;
+    const depth = pathnameArray.length;
+    return deepSearch({
+      inputArray: items,
+      location,
+      depth,
+    });
+  }
+  return {};
+};
+
 export const deepSearch = ({ inputArray = [], location, depth, start = 1 }) => {
   for (let index = 0; index < inputArray.length; index++) {
     if (

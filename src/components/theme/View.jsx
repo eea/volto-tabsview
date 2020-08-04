@@ -11,7 +11,6 @@ import MosaicView from 'volto-mosaic/components/theme/View';
 import DefaultView from '@plone/volto/components/theme/View/DefaultView';
 import penSVG from '@plone/volto/icons/pen.svg';
 import { Icon } from '@plone/volto/components';
-import { getBaseUrl } from '@plone/volto/helpers';
 /* LOCAL IMPORTS */
 import Navigation from './Navigation';
 /* =================================================== */
