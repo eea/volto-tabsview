@@ -12,6 +12,10 @@ const getSchema = props => {
       title: 'Parent page',
       type: 'link',
     },
+    className: {
+      title: 'Classname',
+      type: 'text',
+    },
   };
 };
 

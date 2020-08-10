@@ -20,7 +20,12 @@ const View = ({ content, ...props }) => {
   return props.navigation?.items?.length && parent ? (
     <div className="tabs-view-menu">
       <ScrollContainer className="scroll-container">
-        <Menu widths={props.navigation.items.length}>
+        <Menu
+          widths={props.navigation.items.length}
+          className={
+            props.data.className?.value ? props.data.className.value : ''
+          }
+        >
           {props.navigation.items.map((item, index) => {
             const url = getBasePath(item.url);
             const name = item.title;
