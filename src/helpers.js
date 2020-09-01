@@ -31,7 +31,7 @@ export const getNavigation = (items, pathname, content) => {
 };
 
 export const getNavigationByParent = (items, parent) => {
-  if (items && parent !== undefined) {
+  if (items && parent !== undefined && typeof parent === 'string') {
     const pathnameArray = removeValue(parent.split('/'), '');
     const location = pathnameArray;
     const depth = pathnameArray.length;
