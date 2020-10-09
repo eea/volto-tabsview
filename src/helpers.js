@@ -35,6 +35,9 @@ export const getNavigationByParent = (items, parent) => {
     const pathnameArray = removeValue(parent.split('/'), '');
     const location = pathnameArray;
     const depth = pathnameArray.length;
+    if (!depth) {
+      return items;
+    }
     return deepSearch({
       inputArray: items,
       location,
@@ -48,10 +51,15 @@ export const deepSearch = ({ inputArray = [], location, depth, start = 1 }) => {
   for (let index = 0; index < inputArray.length; index++) {
     if (
       depth === 1 &&
-      inputArray[index].url?.includes(location.slice(0, start).join('/'))
-    )
+      removeValue(inputArray[index].url?.split('/'), '')[start - 1] ===
+        location[start - 1]
+    ) {
       return inputArray[index] || {};
-    if (inputArray[index].url?.includes(location.slice(0, start).join('/'))) {
+    }
+    if (
+      removeValue(inputArray[index].url?.split('/'), '')[start - 1] ===
+      location[start - 1]
+    ) {
       return deepSearch({
         inputArray: inputArray[index].items,
         location,
