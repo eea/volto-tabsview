@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Portal } from 'react-portal';
 import { Link } from 'react-router-dom';
 /* ROOT IMPORTS */
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 /* MOSAIC VIEW */
 import MosaicView from 'volto-mosaic/components/theme/View';
 /* PLONE VOLTO IMPORTS */
@@ -22,8 +22,8 @@ const View = ({ content, ...props }) => {
     : false;
   const clonedSource = content['@components']?.['cloned_source'];
   const path = (clonedSource?.['@id'] || '')
-    .replace(settings.apiPath, '')
-    .replace(settings.internalApiPath, '');
+    .replace(config.settings.apiPath, '')
+    .replace(config.settings.internalApiPath, '');
   return (
     <>
       {props.token && (

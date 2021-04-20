@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 /* ROOT */
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 /* HELPERS */
 import { getNavigationByParent } from '../../../helpers';
 
@@ -34,12 +34,12 @@ const View = ({ content, ...props }) => {
   const getSidebar = (item, depth) => {
     const sidebar = [];
     item?.items?.length &&
-      item.items.forEach(nextItem => {
+      item.items.forEach((nextItem) => {
         sidebar.push(
           <NavLink
             to={nextItem.url === '' ? `/}` : nextItem.url}
             exact={
-              settings.isMultilingual
+              config.settings.isMultilingual
                 ? nextItem.url === `/${props.lang}}`
                 : nextItem.url === ''
             }
@@ -77,7 +77,7 @@ const View = ({ content, ...props }) => {
         }`}
       >
         {props.navigation?.items?.length && parent && (
-          <nav className="tabs">{state?.sidebar?.map(item => item)}</nav>
+          <nav className="tabs">{state?.sidebar?.map((item) => item)}</nav>
         )}
       </div>
     </div>
